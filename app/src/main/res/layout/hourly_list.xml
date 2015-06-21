@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                tools:background = "@drawable/bg_gradiant"
+                >
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeHourLabel"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="24sp"
+        tools:text = "12 PM"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iconImageHour"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/timeHourLabel"
+        android:src="@drawable/snow"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="100"
+        android:id="@+id/tempHourLabel"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/timeHourLabel"
+        android:layout_centerVertical="true"
+        android:textSize="24sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Partly Cloudy"
+        android:id="@+id/summaryHourLabel"
+        android:layout_toLeftOf="@+id/tempHourLabel"
+        android:layout_toRightOf="@+id/iconImageHour"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:nestedScrollingEnabled="true"
+        android:textSize="24sp"
+        android:layout_centerVertical="true"/>
+</RelativeLayout>

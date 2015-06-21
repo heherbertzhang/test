@@ -1,0 +1,224 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+
+                tools:context=".MainActivity"
+                android:background="@drawable/bg_gradiant"
+                android:id="@+id/layout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--"
+        android:id="@+id/Templabel"
+        android:textColor="@android:color/white"
+        android:textSize="150sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/degreeImage"
+        android:src="@drawable/degree"
+        android:layout_alignTop="@+id/Templabel"
+        android:layout_toRightOf="@+id/Templabel"
+        android:layout_toEndOf="@+id/Templabel"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Getting Time..."
+        android:id="@+id/timeHourLabel"
+        android:layout_above="@+id/Templabel"
+        android:layout_centerHorizontal="true"
+        android:textColor="#80ffffff"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Getting Location..."
+        android:id="@+id/locationLabel"
+        android:layout_above="@+id/timeHourLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:textSize="24sp"
+        android:textColor="#80ffffff"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iconImageView"
+        android:layout_alignBottom="@+id/locationLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/sunny"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Templabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:weightSum="2"
+        android:id="@+id/linearLayout">
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity"
+                android:id="@+id/humiditytextView"
+                android:textSize="16sp"
+                android:textColor="#80ffffff"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:id="@+id/HumidityValuetextView"
+                android:textSize="20sp"
+                android:textColor="#80ffffff"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rain/Snow"
+                android:id="@+id/precipTextView"
+                android:textSize="16sp"
+                android:textColor="#80ffffff"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--%"
+                android:id="@+id/precipValueTextView"
+                android:textSize="20sp"
+                android:textColor="#80ffffff"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Getting Weather..."
+        android:id="@+id/summaryTextView"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textColor="#ffffffff"
+        android:textSize="21sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RefreshImage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/refresh"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/RefreshImage"
+        android:layout_above="@+id/RefreshImage"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:id="@+id/latInput"
+        android:layout_alignTop="@+id/iconImageView"
+        android:layout_alignLeft="@+id/locationLabel"
+        android:layout_alignStart="@+id/locationLabel"
+        android:hint="Latitude"
+        android:layout_toLeftOf="@+id/RefreshImage"
+        android:layout_toStartOf="@+id/RefreshImage"
+        android:layout_marginLeft="-5dp"
+        android:maxWidth="20dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:id="@+id/lonInput"
+        android:layout_alignTop="@+id/latInput"
+        android:layout_toRightOf="@+id/latInput"
+        android:hint="Longitude"
+        android:layout_alignRight="@+id/timeHourLabel"
+        android:layout_alignEnd="@+id/timeHourLabel"
+        android:maxWidth="20dp"
+        android:layout_marginRight="5dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:id="@+id/okButton"
+        android:textColor="#80ffffff"
+        android:layout_alignBottom="@+id/lonInput"
+        android:layout_toRightOf="@+id/lonInput"
+        android:layout_toEndOf="@+id/lonInput"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hourly"
+            android:id="@+id/hourlyButton"
+            android:layout_weight="1"
+            android:background="#40FFFFFF"
+            android:layout_marginRight="1dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:text="Daily"
+            android:id="@+id/dailyButton"
+            android:layout_weight="1"
+            android:background="#40FFFFFF"/>
+    </LinearLayout>
+
+</RelativeLayout>
